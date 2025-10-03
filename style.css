@@ -39,10 +39,21 @@ header .container {
     font-style: normal;
 }
 
+
 #name nav a h2,
 #name nav a {
     color: white;
     text-decoration: none;
+}
+/* Logo + Name responsiveness */
+#name nav a img {
+    width: 70px;  /* default desktop */
+    height: auto;
+}
+
+#name nav a h2 {
+    font-size: 28px;
+    white-space: nowrap; /* prevent breaking into two lines */
 }
 
 .navigation ul {
@@ -113,6 +124,13 @@ header .container {
         padding: 15px;
         border-radius: 8px;
     }
+    .container #name nav a img{
+        width: 45px;
+    }
+    .container #name nav a h2{
+        font-size: 18px; 
+    }
+
 
     .navigation.active {
         display: block;
@@ -135,6 +153,27 @@ header .container {
     .btn {
         display: none;
         /* Hide booking button if needed, can also move it inside nav */
+    }
+}
+
+
+/* add more styles here for responsiveness if needed */
+@media screen and (max-width: 480px) {
+    header .container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #name nav a {
+        gap: 6px; /* reduce gap between logo and name */
+    }
+
+    #name nav a img {
+        width: 40px;
+    }
+
+    #name nav a h2 {
+        font-size: 16px;
     }
 }
 
