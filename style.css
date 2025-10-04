@@ -59,6 +59,11 @@ header .container {
     /* prevent breaking into two lines */
 }
 
+/* Default: Desktop view me navigation normal dikhana */
+.navigation {
+  display: block;
+}
+
 .navigation ul {
     display: flex;
     list-style: none;
@@ -125,7 +130,8 @@ header .container {
         right: 20px;
         background-color: rgb(79, 79, 250);
         padding: 15px;
-        border-radius: 8px;
+        border-radius: 8px;     
+        z-index: 9999;  /* 👈 yeh sabse important */
     }
 
     .container #name nav a img {
@@ -135,6 +141,7 @@ header .container {
     .container #name nav a h2 {
         font-size: 18px;
     }
+
 
 
     .navigation.active {
@@ -160,6 +167,8 @@ header .container {
         display: none;
         /* Hide booking button if needed, can also move it inside nav */
     }
+
+
 }
 
 
@@ -346,6 +355,17 @@ main {
     font-size: 1rem;
     color: #333;
 }
+.services-list ul li:hover {
+    color: rgb(79, 79, 250);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+.lists-of-ser-docs{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
 
 
 #pricing {
@@ -432,6 +452,10 @@ main {
     margin: 10px 0;
     color: #555;
     font-size: 0.95rem;
+}
+.card a {
+     text-decoration: none;
+}
 }
 
 .card .btn {
@@ -734,6 +758,9 @@ main {
 
 /* CTA */
 /* CTA Section with Pricing */
+.cta-card h3{
+    text-decoration: none;
+}
 .cta-pricing {
     background-color: #e6f0ff;
     color: #000000;
@@ -766,12 +793,16 @@ main {
 
 }
 
-.cta-pricing-cards {
+.cta-pricing-cards a {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 40px;
-    gap: 20px;
+    gap: 30px;
+}
+.anc {
+    text-decoration: none;
+    color: #000000;
 }
 
 .cta-card {
@@ -779,6 +810,7 @@ main {
     padding: 20px 30px;
     border-radius: 15px;
     min-width: 120px;
+    text-decoration: none;
     transition: transform 0.3s, background-color 0.3s;
 }
 
@@ -795,6 +827,10 @@ main {
 .cta-card .oldprice {
     font-size: 1.5rem;
     font-weight: bold;
+}
+.anc .cta-card:hover{
+    text-decoration: underline;
+    color: blue;
 }
 
 
