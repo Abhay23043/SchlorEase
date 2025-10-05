@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SchlorEase Blog</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="blog.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div id="name">
+                <nav>
+                    <a href="index.html">
+                        <img src="resources/main-logo.png" alt="site logo" class="logo">
+                        <div class="site-name">
+                            <img src="resources/SchlorEase.svg" alt="site name">
+                        </div>
+                    </a>
+                </nav>
+            </div>
+            <nav class="navigation" id="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Blog Section -->
+    <main id="blog">
+        <section class="blog-hero">
+            <h1>Our Latest Blogs</h1>
+            <p>Get insights, updates, and tips from SchlorEase.</p>
+        </section>
+                <section class="testimonials">
+            <div class="he3">
+            </div>
+
+            <div class="testimonial-container">
+                <div class="testimonial active">
+                    <p>"Applications open for Post-Matric Scholarship for General Category: July 10, 2025"</p>
+                    <h4>UP SCHOLORSHIP 2025-2026</h4>
+                </div>
+                <div class="testimonial">
+                    <p>"Applications open for Post-Matric Scholarship for SC, ST categories: July 10, 2025"</p>
+                    <h4>UP SCHOLORSHIP 2025-2026</h4>
+                </div>
+                <!-- <div class="testimonial">
+                    <p>"Fast, reliable, and affordable service. Thank you for making the process stress-free!"</p>
+                    <h4>- Abhishek Kanaujiya</h4>
+                </div> -->
+            </div>
+        </section>
+        <div class="headings">
+             <h2>Practical Guides</h2>
+        </div>
+       
+       
+        <section class="blog-list">
+            <article class="blog-post">
+                <img src="resources/blog/common-mistake.png" alt="Blog 1">
+                <h2>Common Mistake's</h2>
+                <p>Many students make common spelling mistakes while filling scholarship forms, such as misspelling their own name 
+                    <a href="#" class="read-more">Read more...</a>
+                </p>
+            </article>
+
+            <article class="blog-post">
+                <img src="resources/Blog/Document-required.png" alt="Blog 2">
+                <h2>Document Required</h2>
+                <p>While applying for scholarships, make sure all documents are ready <a href="#" class="read-more">Read more...</a></p>
+            
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h3>SchlorEase</h3>
+                <p>Making your forms & documentation easy!</p>
+            </div>
+            <div class="footer-section">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section-contact">
+                <h3>Contact</h3>
+                <p>Email: <a href="mailto:schlorease@outlook.com">schlorease@outlook.com</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Container -->
+    <div id="blogModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalText"></p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+
+    <!-- Hamburger Menu -->
+    <script>
+        const hamburger = document.getElementById("hamburger");
+        const menu = document.getElementById("nav-links");
+
+        hamburger.addEventListener("click", () => {
+            menu.classList.toggle("active");
+        });
+
+        document.querySelectorAll("#nav-links a").forEach(link => {
+            link.addEventListener("click", () => {
+                menu.classList.remove("active");
+            });
+        });
+    </script>
+
+    <!-- Modal Script -->
+    <script>
+        const modal = document.getElementById("blogModal");
+        const modalTitle = document.getElementById("modalTitle");
+        const modalText = document.getElementById("modalText");
+        const closeBtn = document.getElementsByClassName("close")[0];
+
+        // Blog content data
+        const blogs = {
+            "Common Mistake's": "Many students make common spelling mistakes while filling scholarship forms, such as misspelling their own name, parents’ names, school or college names, city or state, or document titles like “Affidavit” or “Income Certificate.” Even words like “Scholarship” or “Registration” are often written incorrectly, which can lead to delays or rejection of the application. To avoid such errors and ensure your form is filled accurately and hassle-free, you can rely on SchlorEase. Our expert team carefully reviews every detail, cross-checks spellings with official documents, and helps students submit complete and error-free scholarship applications. Save time, reduce stress, and increase your chances of success with SchlorEase!",
+            "Document Required": "While applying for scholarships, make sure all documents are ready — Here is a list of commonly required documents for scholarship applications:\n\n1. Affidavit\n2. Father's Income certificate\n3. Student's caste certificate\n4. Domicile certificate\n5. 10th marksheet\n6. 12th marksheet\n7. Father's Aadhar card\n8. Mother's Aadhar card\n9. Student Aadhar card\n10. Fee receipt\n11. Bank Passbook (with NPCI)\n12. Ration card (optional)"
+
+                    };
+
+        // Open modal when h2 or read-more is clicked
+        document.querySelectorAll('.blog-post h2, .blog-post .read-more').forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                const title = item.closest('.blog-post').querySelector('h2').innerText;
+                const content = blogs[title];
+                if (content) {
+                    modalTitle.innerText = title;
+                    modalText.innerText = content;
+                    modal.style.display = "block";
+                }
+            });
+        });
+
+        // Close modal
+        closeBtn.onclick = () => modal.style.display = "none";
+        window.onclick = (e) => { if (e.target == modal) modal.style.display = "none"; };
+    </script>
+    <script>
+    let currentIndex = 0;
+    const testimonials = document.querySelectorAll(".testimonial");
+
+    function showTestimonial(index) {
+        testimonials.forEach((t, i) => {
+            t.classList.remove("active");
+            if (i === index) {
+                t.classList.add("active");
+            }
+        });
+    }
+
+    // Auto-slide every 5 seconds
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % testimonials.length;
+        showTestimonial(currentIndex);
+    }, 4000);
+</script>
+</body>
+</html>

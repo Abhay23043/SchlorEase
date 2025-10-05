@@ -1,0 +1,161 @@
+/* main and html view css */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 70px; /* Adjust this value based on your header height */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Blog Hero Section */
+.blog-hero {
+    background-color: rgb(79, 79, 250);
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.blog-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+.headings {
+    text-align: center;
+    margin: 40px 0 20px 0;
+    color: rgb(194, 73, 255);
+    font-size: 30px;
+}
+
+.blog-hero p {
+    font-size: 1.2rem;
+}
+
+/* Blog List */
+.blog-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 50px 20px;
+}
+
+.blog-post {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    width: 300px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.blog-post img {
+    width: 80%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.blog-post h2 {
+    font-size: 1.5rem;
+    color: rgb(79, 79, 250);
+    padding: 15px 15px 0 15px;
+}
+
+.blog-post p {
+    padding: 10px 15px 15px 15px;
+    color: #555;
+}
+
+.blog-post a {
+    color: rgb(79, 79, 250);
+    text-decoration: underline;
+}
+
+/* Hover effect */
+.blog-post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+}
+
+/* Responsive */
+@media screen and (max-width:768px) {
+    .blog-list {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media screen and (max-width:480px) {
+    .blog-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .blog-post {
+        width: 90%;
+    }
+    .blog-post img {
+        height: 150px;
+    }
+    .blog-post h2 {
+        font-size: 1.3rem;
+    }
+    .blog-post p {
+        font-size: 0.9rem;
+        padding: 8px 10px 10px 10px;
+    }
+    .blog-post a {
+        font-size: 0.9rem;
+        padding: 0 10px 10px 10px;
+    }
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* 10% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+#modalText {
+  white-space: pre-line;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    cursor: pointer;
+    background-color: red;
+}
+/* Additional styles for about sections */
+.about-founder, .about-co-founder {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+}
