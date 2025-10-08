@@ -278,7 +278,8 @@ main {
 
 #contact a {
     text-decoration: none;
-    color: rgb(250, 247, 79);
+    color: rgb(0 158 255);
+    font-weight: 600;
 }
 
 #contact a:hover {
